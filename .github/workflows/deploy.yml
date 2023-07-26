@@ -11,6 +11,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Load & cache dependencies
         uses: ./.github/actions/cached-deps
+        with:
+          caching: 'false' #caching off in action.yml
       - name: Lint code
         run: npm run lint
   test:
